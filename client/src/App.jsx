@@ -480,7 +480,7 @@ function FormOverlay({ onClose }) {
     const t = setTimeout(() => {
       setVisible(false)
       setTimeout(() => { setStep(0); setForm(INITIAL_FORM); setVerified(INITIAL_VERIFIED); onClose() }, 800)
-    }, 4000)
+    }, 6002)
     return () => clearTimeout(t)
   }, [step, onClose])
 

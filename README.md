@@ -12,7 +12,7 @@ creator-incubator/
 │
 ├── server.js          ← Express API + OTP + MongoDB (all backend in one file)
 ├── package.json       ← All dependencies (React + Node combined)
-├── vite.config.js     ← Vite config (root: client/, proxy /api → :4000)
+├── vite.config.js     ← Vite config (root: client/, proxy /api → :6002)
 ├── .env               ← Your local secrets (git-ignored)
 ├── .env.example       ← Template to copy from
 ├── .gitignore
@@ -37,7 +37,7 @@ npm install
 cp .env.example .env
 # Edit .env — fill in MONGO_URI, JWT_SECRET, and SMTP settings
 
-# 3. Run dev (client :3000 + server :4000 concurrently)
+# 3. Run dev (client :3000 + server :6002 concurrently)
 npm run dev
 ```
 
@@ -49,7 +49,7 @@ Visit http://localhost:3000
 
 | Variable              | Description                                          |
 | --------------------- | ---------------------------------------------------- |
-| `PORT`                | Express port (default: 4000)                         |
+| `PORT`                | Express port (default: 6002)                         |
 | `MONGO_URI`           | MongoDB connection string                            |
 | `JWT_SECRET`          | Long random string for signing tokens                |
 | `JWT_EXPIRES_IN`      | Token expiry, e.g. `7d`                              |
@@ -159,4 +159,5 @@ npm start
 1. Go to Google Account → Security → 2-Step Verification → App Passwords
 2. Create an App Password for "Mail"
 3. Use your Gmail address as `SMTP_USER` and the App Password as `SMTP_PASS`
+
 # TURE_SHAPE
