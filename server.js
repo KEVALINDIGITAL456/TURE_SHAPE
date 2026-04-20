@@ -13,7 +13,7 @@ const path = require("path");
 const crypto = require("crypto");
 
 const app = express();
-const PORT = process.env.PORT || 4000;
+const PORT = process.env.PORT || 6002;
 
 // ─────────────────────────────────────────
 //  MongoDB
@@ -132,9 +132,9 @@ async function sendEmailOtp(email, code, minutes) {
           Your verification code. Expires in
           <strong style="color:#fff">${minutes} minutes</strong>.
         </p>
-        <div style="font-size:44px;font-weight:700;letter-spacing:16px;text-align:center;
-                    padding:32px 20px;background:#161616;border:1px solid #222;
-                    color:#fff;margin-bottom:32px;font-family:monospace">
+        <div style="font-size:32px;font-weight:700;letter-spacing:16px;text-align:center;
+                    padding:28px 18px;background:#161616;border:1px solid #222;
+                    color:#fff;margin-bottom:18px;font-family:monospace">
           ${code}
         </div>
         <p style="color:#333;font-size:11px;line-height:1.7;letter-spacing:0.5px">
@@ -431,18 +431,14 @@ app.post(
       });
 
       if (!phoneRecord) {
-        return res
-          .status(403)
-          .json({
-            message: "Phone number verification required before submitting.",
-          });
+        return res.status(403).json({
+          message: "Phone number verification required before submitting.",
+        });
       }
       if (!emailRecord) {
-        return res
-          .status(403)
-          .json({
-            message: "Email address verification required before submitting.",
-          });
+        return res.status(403).json({
+          message: "Email address verification required before submitting.",
+        });
       }
 
       const {

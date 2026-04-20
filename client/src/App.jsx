@@ -480,7 +480,7 @@ function FormOverlay({ onClose }) {
     const t = setTimeout(() => {
       setVisible(false)
       setTimeout(() => { setStep(0); setForm(INITIAL_FORM); setVerified(INITIAL_VERIFIED); onClose() }, 800)
-    }, 4000)
+    }, 6002)
     return () => clearTimeout(t)
   }, [step, onClose])
 
@@ -776,6 +776,8 @@ export default function App() {
         <div className="ts-logo">TRUE SHAPE</div>
       </header>
 
+      
+
       <main className="ts-hero">
         {ready && (
           <>
@@ -792,7 +794,20 @@ export default function App() {
             </div>
             <div className="ts-rule-bot ts-fade" style={{ animationDelay:'1.05s' }} />
             {/* Replace src="" with your video path e.g. src="/manifesto.mp4" */}
-            <VideoPlayer src="" />
+            <video
+  src="/assets/v.mp4"
+  autoPlay
+  loop
+  muted
+  playsInline
+  style={{
+    width: "100%",
+    height: "auto",
+    objectFit: "cover",
+    pointerEvents: "none",
+    display: "block"
+  }}
+/>
           </>
         )}
       </main>
